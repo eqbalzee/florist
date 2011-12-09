@@ -97,4 +97,10 @@ class ProductController {
             redirect(action: "list")
         }
     }
+	
+	def image= {
+		def product = Product.get( params.id )
+		byte[] image = product.image
+		response.outputStream << image
+	}
 }

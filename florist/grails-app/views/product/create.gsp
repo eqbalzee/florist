@@ -45,7 +45,7 @@
                 <g:renderErrors bean="${productInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" >
+            <g:form action="save" enctype="multipart/form-data">
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -60,7 +60,15 @@
 	                                </td>
 	                            </tr>
                             
-                        
+                        	<tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="image"><g:message code="product.image.label" default="Image" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: productInstance, field: 'image', 'errors')}">
+                                    <input type="file" id="image" name="image" />
+                                </td>
+                            </tr>
+                        	
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="introductionDate"><g:message code="product.introductionDate.label" default="Introduction Date" /></label>

@@ -7,6 +7,7 @@ class Product {
 						productFeature : ProductFeature];
 //	static belongsTo = [];
     String name;
+	byte[] image;
 	
 	Date introductionDate;
 	Date salesDiscontinuationDate;

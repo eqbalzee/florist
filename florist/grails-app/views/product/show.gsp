@@ -59,6 +59,16 @@
                         </tr>
                         
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="product.name.label" default="Name" /></td>
+                            
+                            <td valign="top" class="value">
+                            	<g:link controller="product" action="image" id="${productInstance.id}" target="_blank">
+                            		<img width="110" height="110" src="${createLink(controller:'product', action:'image', id: productInstance.id)}"/>
+                            	</g:link>
+                            </td>
+                        </tr>
+                        
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="product.introductionDate.label" default="Introduction Date" /></td>
                             
                             <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productInstance?.introductionDate}" /></td>

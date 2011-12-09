@@ -73,6 +73,11 @@
                         
                             <td>${fieldValue(bean: productInstance, field: "name")}</td>
                             
+                            <td><g:link controller="product" action="image" id="${productInstance.id}" target="_blank">
+                            		<img width="80" height="80" src="${createLink(controller:'product', action:'image', id: productInstance.id)}"/>
+                            	</g:link>
+                            </td>
+                            
                             <td><g:formatDate format="MM-dd-yyyy" date="${productInstance.introductionDate}" /></td>
                             
                             <td><g:formatDate format="MM-dd-yyyy" date="${productInstance.salesDiscontinuationDate}" /></td>
