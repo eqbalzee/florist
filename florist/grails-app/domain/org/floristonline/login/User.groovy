@@ -6,12 +6,14 @@ class User {
 
 	String username
 	String password
+	String email
 	boolean enabled
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
 
 	static constraints = {
+		email blank: false, email: true
 		username blank: false, unique: true
 		password blank: false
 	}
