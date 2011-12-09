@@ -59,7 +59,7 @@
                         </tr>
                         
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="product.name.label" default="Name" /></td>
+                            <td valign="top" class="name"><g:message code="product.image.label" default="Image" /></td>
                             
                             <td valign="top" class="value">
                             	<g:link controller="product" action="image" id="${productInstance.id}" target="_blank">

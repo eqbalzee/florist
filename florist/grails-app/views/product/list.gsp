@@ -48,6 +48,8 @@
                         
                             <g:sortableColumn property="name" title="${message(code: 'product.name.label', default: 'Name')}" />
                             
+                            <g:sortableColumn property="image" title="${message(code: 'product.image.label', default: 'Image')}" />
+                            
                             <g:sortableColumn property="introductionDate" title="${message(code: 'product.introductionDate.label', default: 'Introduction Date')}" />
                         
                             <g:sortableColumn property="salesDiscontinuationDate" title="${message(code: 'product.salesDiscontinuationDate.label', default: 'Sales Discontinuation Date')}" />
