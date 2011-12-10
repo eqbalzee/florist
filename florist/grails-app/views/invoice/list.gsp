@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -46,14 +46,9 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'invoice.id.label', default: 'Id')}" />
                             
-                            <th><g:message code="invoice.invoiceItem.label" default="Invoice Item" /></th>
-                            
+                                                        
                             <g:sortableColumn property="invoiceDate" title="${message(code: 'invoice.invoiceDate.label', default: 'Invoice Date')}" />
-                            
-                            <th><g:message code="invoice.invoiceStatusType.label" default="Invoice Status Type" /></th>
-                            
-                            <th><g:message code="invoice.invoiceStatus.label" default="Invoice Status Date" /></th>
-                            
+                                                                                    
                             <th><g:message code="invoice.billedFrom.label" default="Billed From" /></th>
                             
                             <th><g:message code="invoice.sent From.label" default="Billed From Address" /></th>
@@ -76,14 +71,10 @@
                         
                             <td><g:link action="show" id="${invoiceInstance.id}">${fieldValue(bean: invoiceInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: invoiceInstance, field: "invoiceItem.shipmentItem.orderItem.product.name")}</td>
-                            
+                                                        
                             <td><g:formatDate format="yyyy-MM-dd" date="${invoiceInstance.invoiceDate}" /></td>
                             
-                            <td>${fieldValue(bean: invoiceInstance, field: "invoiceStatusType.invoiceStatusType")}</td>
-                            
-                            <td><g:formatDate format="yyyy-MM-dd" date="${fieldValue(bean: invoiceInstance, field: "invoiceStatus.date")}" /></td>
-                                                                                 
+                                                                                                             
                             <td>${fieldValue(bean: invoiceInstance, field: "billedFrom.firstName")} ${fieldValue(bean: invoiceInstance, field: "billedFrom.lastName")}</td>
                             
                             <td>${fieldValue(bean: invoiceInstance, field: "sentFrom")}</td>

@@ -20,7 +20,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>

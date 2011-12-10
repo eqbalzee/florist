@@ -2,5 +2,7 @@ package org.floristonline
 
 class InvoiceStatus {
 
-    Date statusDate;
+    InvoiceItem invoiceItem
+	InvoiceStatusType invoiceStatusType;
+	Date statusDate;
 }

@@ -2,5 +2,5 @@ package org.floristonline
 
 class ReportShipmentStatusData {
 
-    Shipment shipment;
+    static hasMany = [shipmentItem : ShipmentItem];
 }

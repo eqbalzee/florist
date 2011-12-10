@@ -2,10 +2,10 @@ package org.floristonline
 
 class ProductOrder {
 
-	static hasMany = [orderItem : OrderItem];
+	//static hasMany = [orderItem : OrderItem];
 	Date orderDate;
 	Date entryDate;
-	String orderType;
+	OrderType orderType;
 	Party orderPlacedBy;
 	Party orderEnteredBy;
 }

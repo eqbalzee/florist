@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
@@ -50,22 +50,18 @@
                             <td valign="top" class="value">${fieldValue(bean: shipmentInstance, field: "id")}</td>
                             
                         </tr>
-                    	<tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipment.shipmentItem.label" default="Shipment Item" /></td>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="shipment.estimatedReadyDate.label" default="Estimated Ready Date" /></td>
                             
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${shipmentInstance.shipmentItem}" var="s">
-                                    <li><g:link controller="shipmentItem" action="show" id="${s.id}">${s?.id} - ${s.orderItem.product?.name}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
+                            <td valign="top" class="value"><g:formatDate format="yyyy-MM-dd" date="${shipmentInstance?.estimatedReadyDate}" /></td>
                             
                         </tr>
+                    	
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipment.actualShipCost.label" default="Actual Ship Cost" /></td>
+                            <td valign="top" class="name"><g:message code="shipment.estimatedShipDate.label" default="Estimated Ship Date" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: shipmentInstance, field: "actualShipCost")}</td>
+                            <td valign="top" class="value"><g:formatDate format="yyyy-MM-dd" date="${shipmentInstance?.estimatedShipDate}" /></td>
                             
                         </tr>
                     
@@ -76,12 +72,7 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipment.estimatedReadyDate.label" default="Estimated Ready Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate format="yyyy-MM-dd" date="${shipmentInstance?.estimatedReadyDate}" /></td>
-                            
-                        </tr>
+                        
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="shipment.estimatedShipCost.label" default="Estimated Ship Cost" /></td>
@@ -89,13 +80,15 @@
                             <td valign="top" class="value">${fieldValue(bean: shipmentInstance, field: "estimatedShipCost")}</td>
                             
                         </tr>
-                    
+                        
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipment.estimatedShipDate.label" default="Estimated Ship Date" /></td>
+                            <td valign="top" class="name"><g:message code="shipment.actualShipCost.label" default="Actual Ship Cost" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate format="yyyy-MM-dd" date="${shipmentInstance?.estimatedShipDate}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: shipmentInstance, field: "actualShipCost")}</td>
                             
                         </tr>
+                    
+                        
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="shipment.handlingInstructions.label" default="Handling Instructions" /></td>
@@ -119,19 +112,6 @@
                         </tr>
                     
                         
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipment.shipmentStatus.label" default="Shipment Status" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${shipmentInstance.shipmentStatus}" var="s">
-                                    <li><g:link controller="shipmentStatus" action="show" id="${s.id}">${s?.statusDate}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="shipment.shipmentType.label" default="Shipment Type" /></td>

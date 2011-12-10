@@ -2,6 +2,7 @@ package org.floristonline
 
 class ShipmentStatus {
 
-    ShipmentStatusType shipmentStatusType;
+    ShipmentItem shipmentItem;
+	ShipmentStatusType shipmentStatusType;
 	Date statusDate;
 }

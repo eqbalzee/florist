@@ -97,6 +97,8 @@
                     <li class="controller"><g:link controller="paymentMethodType">Payment Method Type</g:link></li>
                     <li class="controller"><g:link controller="payment">Payment</g:link></li>
                     <li class="controller"><g:link controller="invoicePaymentsReport">Invoice Payments Report</g:link></li>
+                    <li class="controller"><g:link controller="orderType">Order Type</g:link></li>
+                    <li class="controller"><g:link controller="salesAndPurchaseOrderReport">Sales And Purchase Orders Report</g:link></li>
                     
                     
                         <%--<li class="controller"><g:link controller="Product">Create Product</g:link></li>

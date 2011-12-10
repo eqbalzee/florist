@@ -46,9 +46,7 @@
                     	<tr>
                         
                             <g:sortableColumn property="id" title="${message(code: 'productOrder.id.label', default: 'Id')}" />
-                        
-                            <th><g:message code="productOrder.orderItem.label" default="Ordered Items" /></th>
-                            
+                                                                                
                             <g:sortableColumn property="entryDate" title="${message(code: 'productOrder.entryDate.label', default: 'Entry Date')}" />
                         
                             <g:sortableColumn property="orderDate" title="${message(code: 'productOrder.orderDate.label', default: 'Order Date')}" />
@@ -66,15 +64,12 @@
                         
                             <td><g:link action="show" id="${productOrderInstance.id}">${fieldValue(bean: productOrderInstance, field: "id")}</g:link></td>
                         
-                            <td>
-                            ${fieldValue(bean: productOrderInstance, field: "orderItem.product.name")}                
-                            </td>
-                            
+                                                        
                             <td><g:formatDate format="MM-dd-yyyy" date="${productOrderInstance.entryDate}" /></td>
                         
                             <td><g:formatDate format="MM-dd-yyyy" date="${productOrderInstance.orderDate}" /></td>
                         
-                            <td>${fieldValue(bean: productOrderInstance, field: "orderType")}</td>
+                            <td>${fieldValue(bean: productOrderInstance, field: "orderType.description")}</td>
                                                                                 
                             <td>${fieldValue(bean: productOrderInstance, field: "orderEnteredBy.firstName")} ${fieldValue(bean: productOrderInstance, field: "orderEnteredBy.lastName")}</td>
                         

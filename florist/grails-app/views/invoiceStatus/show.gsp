@@ -28,6 +28,29 @@
                             <td valign="top" class="value">${fieldValue(bean: invoiceStatusInstance, field: "id")}</td>
                             
                         </tr>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="invoiceStatus.invoiceItem.label" default="Invoice Id" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="invoiceItem" action="show" id="${invoiceStatusInstance?.invoiceItem?.invoice?.id}">${invoiceStatusInstance?.invoiceItem?.invoice?.id}</g:link></td>
+                            
+                        </tr>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="invoiceStatus.invoiceItem.label" default="Invoice Item Id" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="invoiceItem" action="show" id="${invoiceStatusInstance?.invoiceItem?.id}">${invoiceStatusInstance?.invoiceItem?.id}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="invoiceStatus.invoiceStatusType.label" default="Status" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="invoiceItem" action="show" id="${invoiceStatusInstance?.invoiceStatusType?.id}">${invoiceStatusInstance?.invoiceStatusType?.invoiceStatusType}</g:link></td>
+                            
+                        </tr>
+                    
+                        
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="invoiceStatus.statusDate.label" default="Status Date" /></td>

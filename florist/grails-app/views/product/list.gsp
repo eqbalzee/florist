@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -55,9 +55,7 @@
                             <g:sortableColumn property="salesDiscontinuationDate" title="${message(code: 'product.salesDiscontinuationDate.label', default: 'Sales Discontinuation Date')}" />
                             
                             <th><g:message code="product.productCategories.label" default="Product Category" /></th>
-                            
-                            <th><g:message code="product.productFeature.label" default="Product Feature" /></th>
-                            
+                                                                                    
                             <g:sortableColumn property="estimatedProductCost" title="${message(code: 'product.name.label', default: 'Estimated Product Cost')}" />
                             
                             <g:sortableColumn property="priceComponent" title="${message(code: 'product.name.label', default: 'Unit Price')}" />
@@ -85,9 +83,7 @@
                             <td><g:formatDate format="MM-dd-yyyy" date="${productInstance.salesDiscontinuationDate}" /></td>
                             
                             <td>${fieldValue(bean: productInstance, field: "productCategories.description")}</td>
-                            
-                            <td>${fieldValue(bean: productInstance, field: "productFeature.description")}</td>
-                            
+                                                                                    
                             <td>${productInstance.estimatedProductCost()}</td>
                             
                             <td>${productInstance.priceComponent()}</td>

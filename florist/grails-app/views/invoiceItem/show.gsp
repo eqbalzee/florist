@@ -50,7 +50,14 @@
                             <td valign="top" class="value">${fieldValue(bean: invoiceItemInstance, field: "id")}</td>
                             
                         </tr>
-                    
+                    	
+                    	<tr class="prop">
+                            <td valign="top" class="name"><g:message code="invoiceItem.invoice.label" default="Invoice Id" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="invoice" action="show" id="${invoiceItemInstance?.invoice?.id}">${invoiceItemInstance?.invoice?.id}</g:link></td>
+                            
+                        </tr>
+                        
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="invoiceItem.shipmentItem.label" default="Shipment Item" /></td>
                             

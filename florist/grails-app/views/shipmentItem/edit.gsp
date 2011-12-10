@@ -20,7 +20,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -53,7 +53,20 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+                        	
+                        	<tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="shipment"><g:message code="shipmentItem.shipment.label" default="Shipment Id" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: shipmentItemInstance, field: 'shipment', 'errors')}">
+                                    <g:select name="shipment.id" 
+                                    from="${org.floristonline.Shipment.list()}" 
+                                    optionKey="id" 
+                                    optionValue="${{it.id}}"
+                                    value="${shipmentItemInstance?.shipment?.id}"  />
+                                </td>
+                            </tr>
+                            
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="orderItem"><g:message code="shipmentItem.orderItem.label" default="Order Item" /></label>
@@ -76,18 +89,7 @@
                                 </td>
                             </tr>
                             
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="shipmentStatus"><g:message code="shipmentItem.shipmentStatus.label" default="Shipment Status" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: shipmentItemInstance, field: 'shipmentStatus', 'errors')}">
-                                    <g:select name="shipmentStatus.id" 
-                                    from="${org.floristonline.ShipmentStatus.list()}" 
-                                    optionKey="id" 
-                                    optionValue="${{it.shipmentStatusType.shipmentStatusType + ' ' + it.statusDate}}"
-                                    value="${shipmentItemInstance?.shipmentStatus?.id}"  />
-                                </td>
-                            </tr>
+                            
                         
                             <tr class="prop">
                                 <td valign="top" class="name">

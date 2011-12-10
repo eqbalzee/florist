@@ -65,23 +65,11 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productOrder.orderItem.label" default="Order Item" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${productOrderInstance.orderItem}" var="o">
-                                    <li><g:link controller="orderItem" action="show" id="${o.id}">${o.product?.name}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
+                                            
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="productOrder.orderType.label" default="Order Type" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: productOrderInstance, field: "orderType")}</td>
+                            <td valign="top" class="value"><g:link controller="orderType" action="show" id="${productOrderInstance?.orderType?.id}">${productOrderInstance?.orderType?.description}</g:link></td>
                             
                         </tr>
                     

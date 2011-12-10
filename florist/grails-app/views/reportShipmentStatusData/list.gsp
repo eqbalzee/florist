@@ -20,7 +20,7 @@
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
             
@@ -30,7 +30,7 @@
         &nbsp;
         </div>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+            
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
@@ -49,25 +49,22 @@
                             
                             <th><g:message code="reportShipmentStatusData.shipment.label" default="Shipment Item" /></th>
                             
-                            <th><g:message code="reportShipmentStatusData.shipment.label" default="Shipment Status" /></th>
                             
-                            <th><g:message code="reportShipmentStatusData.shipment.label" default="Status Date" /></th>
                         
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${reportShipmentStatusDataInstanceList}" status="i" var="reportShipmentStatusDataInstance">
                     
-                    <g:each in="${reportShipmentStatusDataInstance.shipment.shipmentItem}" status="j" var="shipmentItemInstance">
+                    <g:each in="${reportShipmentStatusDataInstance.shipmentItem}" status="j" var="shipmentItemInstance">
                     
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
                             <td><g:link action="show" id="${reportShipmentStatusDataInstance.id}">${fieldValue(bean: reportShipmentStatusDataInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: reportShipmentStatusDataInstance, field: "shipment.id")}</td>
+                            <td>${fieldValue(bean: shipmentItemInstance, field: "shipment.id")}</td>
                             <td>${fieldValue(bean: shipmentItemInstance, field: "orderItem.product.name")}</td>
-                            <td>${fieldValue(bean: shipmentItemInstance, field: "shipmentStatus.shipmentStatusType.shipmentStatusType")}</td>
-                            <td><g:formatDate format="yyyy-MM-dd" date="${${fieldValue(bean: shipmentItemInstance, field: "shipmentStatus.statusDate")}}" /></td>
+                            
                         		
                         </tr>
                     </g:each>    

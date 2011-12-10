@@ -5,8 +5,9 @@ class ShipmentItem {
 	//static hasMany = [orderItem : OrderItem];
 	//static belongsTo = OrderItem;
 	//Product product;
+	Shipment shipment;
 	OrderItem orderItem;
-	ShipmentStatus shipmentStatus;
+	//ShipmentStatus shipmentStatus;
     int quantity;
 	String shipmentContentsDescription;
 	

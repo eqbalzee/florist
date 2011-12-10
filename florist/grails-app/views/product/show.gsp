@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -81,20 +81,7 @@
                             <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productInstance?.salesDiscontinuationDate}" /></td>
                             
                         </tr>
-                        
-                    	<tr class="prop">
-                            <td valign="top" class="name"><g:message code="product.productFeature.label" default="Product Feature" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${productInstance.productFeature}" var="p">
-                                    <li><g:link controller="productFeature" action="show" id="${p.id}">${p?.description}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                        
+                                            	                        
                     	<tr class="prop">
                             <td valign="top" class="name"><g:message code="product.productCategories.label" default="Product Categories" /></td>
                             

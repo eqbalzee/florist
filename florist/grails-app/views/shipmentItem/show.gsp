@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -51,6 +51,13 @@
                             <td valign="top" class="value">${fieldValue(bean: shipmentItemInstance, field: "id")}</td>
                             
                         </tr>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="shipmentItem.shipment.label" default="Shipment Id" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="shipment" action="show" id="${shipmentItemInstance?.shipment?.id}">${shipmentItemInstance?.shipment?.id}</g:link></td>
+                            
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="shipmentItem.orderItem.label" default="Order Item" /></td>
@@ -67,9 +74,9 @@
                         </tr>
                         
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="shipmentItem.shipmentStatus.label" default="Shipment Status" /></td>
+                            <td valign="top" class="name"><g:message code="shipmentItem.unitPrice.label" default="Unit Price" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="shipmentStatus" action="show" id="${shipmentItemInstance?.shipmentStatus?.id}">${shipmentItemInstance?.shipmentStatus?.shipmentStatusType?.shipmentStatusType} - <g:formatDate format="yyyy-MM-dd" date="${shipmentItemInstance?.shipmentStatus?.statusDate}" /></g:link></td>
+                            <td valign="top" class="value">${shipmentItemInstance.orderItem.product.priceComponent()}</td>
                             
                         </tr>
                     

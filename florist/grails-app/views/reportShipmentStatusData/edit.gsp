@@ -9,7 +9,7 @@
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
-    <div class="nav">
+    	<div class="nav">
             
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
@@ -21,7 +21,7 @@
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
             
@@ -54,12 +54,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="shipment"><g:message code="reportShipmentStatusData.shipment.label" default="Shipment" /></label>
+                                  <label for="shipmentItem"><g:message code="reportShipmentStatusData.shipmentItem.label" default="Shipment Item" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: reportShipmentStatusDataInstance, field: 'shipment', 'errors')}">
-                                    <g:select name="shipment.id" from="${org.floristonline.Shipment.list()}" optionKey="id" 
+                                <td valign="top" class="value ${hasErrors(bean: reportShipmentStatusDataInstance, field: 'shipmentItem', 'errors')}">
+                                    <g:select name="shipmentItem" from="${org.floristonline.ShipmentItem.list()}" multiple="yes" optionKey="id" size="5" 
                                     optionValue="${{it.id}}"
-                                    value="${reportShipmentStatusDataInstance?.shipment?.id}"  />
+                                    value="${reportShipmentStatusDataInstance?.shipmentItem*.id}" />
                                 </td>
                             </tr>
                         

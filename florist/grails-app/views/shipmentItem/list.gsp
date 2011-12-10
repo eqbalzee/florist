@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -47,13 +47,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'shipmentItem.id.label', default: 'Id')}" />
                                                                                 
-                            <th><g:message code="shipmentItem.orderItem.label" default="Order Item" /></th>
+                            <g:sortableColumn property="shipment" title="${message(code: 'shipmentItem.shipment.label', default: 'Shipment Id')}" />
                             
+                            <th><g:message code="shipmentItem.orderItem.label" default="Order Item" /></th>
+                                                      
                             <th><g:message code="shipmentItem.orderedQuantity.label" default="Ordered Quantity" /></th>
                                                     
                             <g:sortableColumn property="quantity" title="${message(code: 'shipmentItem.quantity.label', default: 'Shipment Quantity')}" />
                         
-                        	<th><g:message code="shipmentItem.shipmentStatus.label" default="Shipment Status" /></th>
+                        	<th><g:message code="shipmentItem.unitPrice.label" default="Unit Price" /></th>
                         
                             <g:sortableColumn property="shipmentContentsDescription" title="${message(code: 'shipmentItem.shipmentContentsDescription.label', default: 'Shipment Contents Description')}" />
                         
@@ -65,6 +67,9 @@
                         
                             <td><g:link action="show" id="${shipmentItemInstance.id}">${fieldValue(bean: shipmentItemInstance, field: "id")}</g:link></td>
                         	
+                            <td>${fieldValue(bean: shipmentItemInstance, field: "shipment.id")}                     
+                            </td>
+                            
                             <td>
                             ${fieldValue(bean: shipmentItemInstance, field: "orderItem.product.name")}
                             
@@ -74,11 +79,7 @@
                         	
                             <td>${fieldValue(bean: shipmentItemInstance, field: "quantity")}</td>
                             
-                            <td>
-                            ${fieldValue(bean: shipmentItemInstance, field: "shipmentStatus.shipmentStatusType.shipmentStatusType")} - 
-                            
-                            <g:formatDate format="yyyy-MM-dd" date="${{fieldValue(bean: shipmentItemInstance, field: "shipmentStatus.statusDate")}}" />
-                            </td>
+                            <td>${shipmentItemInstance.orderItem.product.priceComponent()}</td>
                         
                             <td>${fieldValue(bean: shipmentItemInstance, field: "shipmentContentsDescription")}</td>
                         

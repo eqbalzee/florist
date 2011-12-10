@@ -55,6 +55,17 @@
                         
                         <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="invoice"><g:message code="invoiceItem.invoice.label" default="Invoice Id" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: invoiceItemInstance, field: 'invoice', 'errors')}">
+                                    <g:select name="invoice.id" from="${org.floristonline.Invoice.list()}" optionKey="id" 
+                                    optionValue="${{it.id}}"
+                                    value="${invoiceItemInstance?.invoice?.id}"  />
+                                </td>
+                            </tr>
+                            
+                        <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="shipmentItem"><g:message code="invoiceItem.shipmentItem.label" default="Shipment Item" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: invoiceItemInstance, field: 'shipmentItem', 'errors')}">

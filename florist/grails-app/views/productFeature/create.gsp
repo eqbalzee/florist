@@ -9,7 +9,8 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
+    
+    	<div class="nav">
             
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
@@ -20,7 +21,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -31,6 +32,7 @@
         <div>
         &nbsp;
         </div>
+        
         <div class="nav">
             
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
@@ -49,59 +51,18 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+                        	
                         	<tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="description"><g:message code="productFeature.description.label" default="Description" /></label>
+                                    <label for="product"><g:message code="productFeature.product.label" default="Product" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'description', 'errors')}">
-                                    <g:textField name="description" value="${productFeatureInstance?.description}" />
-                                </td>
-                            </tr>
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="fromDate"><g:message code="productFeature.fromDate.label" default="From Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'fromDate', 'errors')}">
-                                    <g:datePicker name="fromDate" precision="day" value="${productFeatureInstance?.fromDate}"  />
-                                </td>
-                            </tr> 
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="thruDate"><g:message code="productFeature.thruDate.label" default="Thru Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'thruDate', 'errors')}">
-                                    <g:datePicker name="thruDate" precision="day" value="${productFeatureInstance?.thruDate}"  />
+                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'product', 'errors')}">
+                                    <g:select name="product.id" from="${org.floristonline.Product.list()}" optionKey="id" 
+                                    optionValue="${{it.name}}"
+                                    value="${productFeatureInstance?.product?.id}"  />
                                 </td>
                             </tr>
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="estimatedProductCost"><g:message code="productFeature.estimatedProductCost.label" default="Estimated Product Cost" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'estimatedProductCost', 'errors')}">
-                                    <g:select name="estimatedProductCost" from="${org.floristonline.EstimatedProductCost.list()}" multiple="yes"
-                                     optionKey="id" size="5" 
-                                     optionValue="${{'$' + ' ' + it.cost +  '-' + it.estimatedProductCostType?.description}}"
-                                     value="${productFeatureInstance?.estimatedProductCost*.id}" />
-                                </td>
-                            </tr>
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="priceComponent"><g:message code="productFeature.priceComponent.label" default="Price Component" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'priceComponent', 'errors')}">
-                                    <g:select name="priceComponent" from="${org.floristonline.PriceComponent.list()}" multiple="yes"
-                                     optionKey="id" size="5" 
-                                     optionValue="${{'$' + ' ' + it.price +  '-' + it.priceComponentType?.description}}"
-                                     value="${productInstance?.priceComponent*.id}" />
-                                                                          
-                                </td>
-                            </tr>
-                            
+                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="color"><g:message code="productFeature.color.label" default="Color" /></label>
@@ -111,16 +72,25 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="description"><g:message code="productFeature.description.label" default="Description" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'description', 'errors')}">
+                                    <g:textField name="description" value="${productFeatureInstance?.description}" />
+                                </td>
+                            </tr>
+                        
                             
                         
                             
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="product_Quality"><g:message code="productFeature.product_Quality.label" default="Product Quality" /></label>
+                                    <label for="quality"><g:message code="productFeature.quality.label" default="Quality" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'product_Quality', 'errors')}">
-                                    <g:textField name="product_Quality" value="${productFeatureInstance?.product_Quality}" />
+                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'quality', 'errors')}">
+                                    <g:textField name="quality" value="${productFeatureInstance?.quality}" />
                                 </td>
                             </tr>
                         
@@ -132,15 +102,22 @@
                                     <g:textField name="size" value="${productFeatureInstance?.size}" />
                                 </td>
                             </tr>
-                        
                             
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="fromDate"><g:message code="productFeature.fromDate.label" default="From Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'fromDate', 'errors')}">
+                                    <g:datePicker name="fromDate" precision="day" value="${productFeatureInstance?.fromDate}"  />
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="unitOfMeasure"><g:message code="productFeature.unitOfMeasure.label" default="Unit Of Measure" /></label>
+                                    <label for="thruDate"><g:message code="productFeature.thruDate.label" default="Thru Date" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'unitOfMeasure', 'errors')}">
-                                    <g:textField name="unitOfMeasure" value="${productFeatureInstance?.unitOfMeasure}" />
+                                <td valign="top" class="value ${hasErrors(bean: productFeatureInstance, field: 'thruDate', 'errors')}">
+                                    <g:datePicker name="thruDate" precision="day" value="${productFeatureInstance?.thruDate}"  />
                                 </td>
                             </tr>
                         

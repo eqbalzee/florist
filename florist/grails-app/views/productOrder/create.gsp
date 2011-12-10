@@ -50,18 +50,7 @@
                     <table>
                         <tbody>
                         
-                        <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="orderItem"><g:message code="productOrder.orderItem.label" default="Order Item" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: productOrderInstance, field: 'orderItem', 'errors')}">
-                                    <g:select name="orderItem" 
-                                    from="${org.floristonline.OrderItem.list()}" 
-                                    multiple="yes" optionKey="id" size="5" 
-                                    optionValue="${{it.product.name}}"
-                                    value="${productOrderInstance?.orderItem*.id}" />
-                                </td>
-                            </tr>
+                        
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -85,10 +74,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="orderType"><g:message code="productOrder.orderType.label" default="Order Type" /></label>
+                                    <label for="orderType"><g:message code="productOrder.orderType.label" default="Order Type" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: productOrderInstance, field: 'orderType', 'errors')}">
-                                    <g:textField name="orderType" value="${productOrderInstance?.orderType}" />
+                                    <g:select name="orderType.id" from="${org.floristonline.OrderType.list()}" optionKey="id" 
+                                    optionValue="${{it.description}}"
+                                    value="${productOrderInstance?.orderType?.id}"  />
                                 </td>
                             </tr>
                         

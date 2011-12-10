@@ -31,6 +31,29 @@
                     <table>
                         <tbody>
                         
+                        	<tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="invoiceItem"><g:message code="invoiceStatus.invoiceItem.label" default="Invoice Item" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: invoiceStatusInstance, field: 'invoiceItem', 'errors')}">
+                                    <g:select name="invoiceItem.id" from="${org.floristonline.InvoiceItem.list()}" optionKey="id" 
+                                    optionValue="${{'Invoice Id: '+ it.invoice.id + 'InvoiceItem Id: ' + it.invoiceItem.id}}"
+                                    value="${invoiceStatusInstance?.invoiceItem?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="invoiceItem"><g:message code="invoiceStatus.invoiceStatusType.label" default="Status" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: invoiceStatusInstance, field: 'invoiceStatusType', 'errors')}">
+                                    <g:select name="invoiceStatusType.id" from="${org.floristonline.InvoiceStatusType.list()}" optionKey="id" 
+                                    optionValue="${{it.invoiceStatusType}}"
+                                    value="${invoiceStatusInstance?.invoiceStatusType?.id}"  />
+                                </td>
+                            </tr>
+                        
+                                                    
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="statusDate"><g:message code="invoiceStatus.statusDate.label" default="Status Date" /></label>

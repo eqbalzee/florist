@@ -8,7 +8,7 @@
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
-    <div class="nav">
+    	<div class="nav">
             
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
@@ -19,8 +19,8 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
-            <span class="menuButton"><g:link controller="estimatedProductCost">Estimated Cost</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
+            <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
@@ -50,25 +50,20 @@
                             <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "id")}</td>
                             
                         </tr>
-                    	
-                    	<tr class="prop">
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="productFeature.product.label" default="Product" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="product" action="show" id="${productFeatureInstance?.product?.id}">${productFeatureInstance?.product?.name}</g:link></td>
+                            
+                        </tr>
+                    
+                        
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="productFeature.description.label" default="Description" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "description")}</td>
-                            
-                        </tr>
-                        
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.fromDate.label" default="From Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance?.fromDate}" /></td>
-                            
-                        </tr>
-                        
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.thruDate.label" default="Thru Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance?.thruDate}" /></td>
                             
                         </tr>
                         
@@ -78,44 +73,14 @@
                             <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "color")}</td>
                             
                         </tr>
-                    
                         
-                    
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.estimatedProductCost.label" default="Estimated Product Cost" /></td>
+                            <td valign="top" class="name"><g:message code="productFeature.quality.label" default="Quality" /></td>
                             
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${productFeatureInstance.estimatedProductCost}" var="e">
-                                    <li><g:link controller="estimatedProductCost" action="show" id="${e.id}">$${e?.cost}-${e.estimatedProductCostType?.description }</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
+                            <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "quality")}</td>
                             
                         </tr>
                         
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.priceComponent.label" default="Price Component" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${productFeatureInstance.priceComponent}" var="e">
-                                    <li><g:link controller="priceComponent" action="show" id="${e.id}">$${e?.price}-${e.priceComponentType?.description }</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.product_Quality.label" default="Product Quality" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "product_Quality")}</td>
-                            
-                        </tr>
-                    
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="productFeature.size.label" default="Size" /></td>
                             
@@ -123,12 +88,18 @@
                             
                         </tr>
                     
-                        
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="productFeature.fromDate.label" default="From Date" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance?.fromDate}" /></td>
+                            
+                        </tr>
+                         
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="productFeature.unitOfMeasure.label" default="Unit Of Measure" /></td>
+                            <td valign="top" class="name"><g:message code="productFeature.thruDate.label" default="Thru Date" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: productFeatureInstance, field: "unitOfMeasure")}</td>
+                            <td valign="top" class="value"><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance?.thruDate}" /></td>
                             
                         </tr>
                     

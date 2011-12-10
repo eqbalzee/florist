@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -51,18 +51,7 @@
                             
                         </tr>
                         
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="invoice.invoiceItem.label" default="Invoice Item" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${invoiceInstance.invoiceItem}" var="i">
-                                    <li><g:link controller="invoiceItem" action="show" id="${i.id}">${i?.shipmentItem?.orderItem?.product.name}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
+                        
                     	
                     	<tr class="prop">
                             <td valign="top" class="name"><g:message code="invoice.invoiceDate.label" default="Invoice Date" /></td>
@@ -71,20 +60,7 @@
                             
                         </tr>
                         
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="invoice.invoiceStatusType.label" default="Invoice Status Type" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="party" action="show" id="${invoiceInstance?.invoiceStatusType?.id}">${invoiceInstance?.invoiceStatusType?.invoiceStatusType}</g:link></td>
-                            
-                        </tr>
-                        
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="invoice.invoiceStatus.label" default="Invoice Status Date" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="party" action="show" id="${invoiceInstance?.invoiceStatus?.id}"><g:formatDate format="yyyy-MM-dd" date="${invoiceInstance?.invoiceStatus?.statusDate}" /></g:link></td>
-                            
-                        </tr>
-                        
+                                                
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="invoice.billedFrom.label" default="Billed From" /></td>
                             

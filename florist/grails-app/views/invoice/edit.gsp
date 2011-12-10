@@ -20,7 +20,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -53,17 +53,7 @@
                     <table>
                         <tbody>
                         
-                        <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="invoiceItem"><g:message code="invoice.invoiceItem.label" default="Invoice Item" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: invoiceInstance, field: 'invoiceItem', 'errors')}">
-                                    <g:select name="invoiceItem.id" from="${org.floristonline.InvoiceItem.list()}" optionKey="id" 
-                                    optionValue="${{it.shipmentItem.orderItem.product.name}}"
-                                    value="${invoiceInstance?.invoiceItem?.id}"  />
-                                </td>
-                            </tr>
-                            
+                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="invoiceDate"><g:message code="invoice.invoiceDate.label" default="Invoice Date" /></label>
@@ -72,28 +62,6 @@
                                     <g:datePicker name="invoiceDate" precision="day" value="${invoiceInstance?.invoiceDate}"  />
                                 </td>
                             </tr>
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="invoiceStatusType"><g:message code="invoice.invoiceStatusType.label" default="Invoice Status Type" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: invoiceInstance, field: 'invoiceStatusType', 'errors')}">
-                                    <g:select name="invoiceStatusType.id" from="${org.floristonline.InvoiceStatusType.list()}" optionKey="id" 
-                                    optionValue="${{it.invoiceStatusType}}"
-                                    value="${invoiceInstance?.invoiceStatusType?.id}"  />
-                                </td>
-                            </tr>
-                            
-                             <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="invoiceStatus"><g:message code="invoice.invoiceStatus.label" default="Invoice Status Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: invoiceInstance, field: 'invoiceStatusType', 'errors')}">
-                                    <g:select name="invoiceStatus.id" from="${org.floristonline.InvoiceStatus.list()}" optionKey="id" 
-                                    optionValue="${{it.statusDate}}"
-                                    value="${invoiceInstance?.invoiceStatus?.id}"  />
-                                </td>
-                            </tr>     
                             
                             
                             <tr class="prop">

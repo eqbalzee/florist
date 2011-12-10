@@ -8,7 +8,7 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-    <div class="nav">
+    	<div class="nav">
             
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
@@ -19,7 +19,7 @@
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
@@ -45,20 +45,22 @@
                         <tr>
                         
                             <g:sortableColumn property="id" title="${message(code: 'productFeature.id.label', default: 'Id')}" />
-                            
-                            <g:sortableColumn property="description" title="${message(code: 'productFeature.description.label', default: 'Description')}" />
                         
-                        	<g:sortableColumn property="fromDate" title="${message(code: 'productFeature.fromDate.label', default: 'From Date')}" />
-                        	
-                        	<g:sortableColumn property="thruDate" title="${message(code: 'productFeature.thruDate.label', default: 'Thru Date')}" />
-                        	
-                            <g:sortableColumn property="color" title="${message(code: 'productFeature.color.label', default: 'Color')}" />
-                                         
-                            <g:sortableColumn property="product_Quality" title="${message(code: 'productFeature.product_Quality.label', default: 'Product Quality')}" />
+                            <g:sortableColumn property="product" title="${message(code: 'productFeature.product.label', default: 'Product')}" />
+                            
+                            <g:sortableColumn property="image" title="${message(code: 'productFeature.image.label', default: 'Image')}" />
+                                                                                
+                            <g:sortableColumn property="description" title="${message(code: 'productFeature.description.label', default: 'Description')}" />
                         
                             <g:sortableColumn property="size" title="${message(code: 'productFeature.size.label', default: 'Size')}" />
                             
-                            <g:sortableColumn property="unitOfMeasure" title="${message(code: 'productFeature.size.label', default: 'Size')}" />
+                            <g:sortableColumn property="color" title="${message(code: 'productFeature.color.label', default: 'Color')}" />
+                            
+                            <g:sortableColumn property="quality" title="${message(code: 'productFeature.quality.label', default: 'Quality')}" />
+                            
+                            <g:sortableColumn property="fromDate" title="${message(code: 'productFeature.fromDate.label', default: 'From Date')}" />
+                                                                            
+                            <g:sortableColumn property="thruDate" title="${message(code: 'productFeature.thruDate.label', default: 'Thru Date')}" />
                         
                         </tr>
                     </thead>
@@ -67,20 +69,25 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
                             <td><g:link action="show" id="${productFeatureInstance.id}">${fieldValue(bean: productFeatureInstance, field: "id")}</g:link></td>
-                        	
-                        	<td>${fieldValue(bean: productFeatureInstance, field: "description")}</td>
-                        	
-                        	<td><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance.fromDate}" /></td>
-                        	
-                        	<td><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance.thruDate}" /></td>
-                        	
-                            <td>${fieldValue(bean: productFeatureInstance, field: "color")}</td>
-                                                
-                            <td>${fieldValue(bean: productFeatureInstance, field: "product_Quality")}</td>
                         
+                            <td>${fieldValue(bean: productFeatureInstance, field: "product.name")}</td>
+                            
+                            <td><g:link controller="product" action="image" id="${productFeatureInstance.id}" target="_blank">
+                            		<img width="80" height="80" src="${createLink(controller:'product', action:'image', id: productFeatureInstance.product.id)}"/>
+                            	</g:link>
+                            </td>
+                            
+                            <td>${fieldValue(bean: productFeatureInstance, field: "description")}</td>
+                            
                             <td>${fieldValue(bean: productFeatureInstance, field: "size")}</td>
                             
-                            <td>${fieldValue(bean: productFeatureInstance, field: "unitOfMeasure")}</td>
+                            <td>${fieldValue(bean: productFeatureInstance, field: "color")}</td>
+                            
+                            <td>${fieldValue(bean: productFeatureInstance, field: "quality")}</td>
+                                                                            
+                            <td><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance.fromDate}" /></td>
+                                                                            
+                            <td><g:formatDate format="MM-dd-yyyy" date="${productFeatureInstance.fromDate}" /></td>
                         
                         </tr>
                     </g:each>

@@ -5,7 +5,7 @@ class InvoiceItem {
 	
 	 
 	ShipmentItem shipmentItem;
-	
+	Invoice invoice;
 	InvoiceItemType InvoiceItemType;
 	//static hasMany = [paymentApplication : PaymentApplication];
 	char taxableFlag;

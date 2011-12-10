@@ -3,12 +3,9 @@ package org.floristonline
 class Product {
 
 	
-	static hasMany = [	productCategories: ProductCategory,
-						productFeature : ProductFeature];
-//	static belongsTo = [];
+	static hasMany = [productCategories: ProductCategory];
     String name;
 	byte[] image;
-	
 	Date introductionDate;
 	Date salesDiscontinuationDate;
 	String comment;

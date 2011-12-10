@@ -4,16 +4,12 @@ import java.util.Date;
 
 class ProductFeature {
 
-	static hasMany = [priceComponent : PriceComponent, 
-					  estimatedProductCost : EstimatedProductCost
-					   ];
-	
+	Product product;
 	String description;
 	Date fromDate;
 	Date thruDate;
-	String product_Quality;
+	String quality;
 	String color;
-	String unitOfMeasure;
 	String size;
 	
 	

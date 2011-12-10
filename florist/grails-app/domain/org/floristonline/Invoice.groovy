@@ -3,9 +3,9 @@ package org.floristonline
 class Invoice {
 
 	
-	InvoiceItem invoiceItem
-	InvoiceStatus invoiceStatus;
-	InvoiceStatusType invoiceStatusType;
+	//InvoiceItem invoiceItem
+	//InvoiceStatus invoiceStatus;
+	//InvoiceStatusType invoiceStatusType;
 	Party billedTo;
 	Party billedFrom;
 	ContactMechanism addressedTo;

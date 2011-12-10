@@ -24,6 +24,12 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'invoiceStatus.id.label', default: 'Id')}" />
                         
+                            <g:sortableColumn property="invoiceId" title="${message(code: 'invoiceStatus.InvoiceId.label', default: 'Invoice ID')}" />
+                            
+                            <th><g:message code="invoiceStatus.invoiceItem.label" default="Invoice Item Id" /></th>
+                            
+                            <g:sortableColumn property="invoiceStatusType" title="${message(code: 'invoiceStatus.invoiceStatusType.label', default: 'Status')}" />
+                                                                           
                             <g:sortableColumn property="statusDate" title="${message(code: 'invoiceStatus.statusDate.label', default: 'Status Date')}" />
                         
                         </tr>
@@ -34,6 +40,12 @@
                         
                             <td><g:link action="show" id="${invoiceStatusInstance.id}">${fieldValue(bean: invoiceStatusInstance, field: "id")}</g:link></td>
                         
+                            <td>${fieldValue(bean: invoiceStatusInstance, field: "invoiceItem.id")}</td>
+                            
+                            <td>${fieldValue(bean: invoiceStatusInstance, field: "invoiceItem.id")}</td>
+                            
+                            <td>${fieldValue(bean: invoiceStatusInstance, field: "invoiceStatusType.invoiceStatusType")}</td>
+                                                                            
                             <td><g:formatDate date="${invoiceStatusInstance.statusDate}" /></td>
                         
                         </tr>

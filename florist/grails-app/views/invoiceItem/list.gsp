@@ -46,6 +46,8 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'invoiceItem.id.label', default: 'Id')}" />
                         
+                            <g:sortableColumn property="invoiceId" title="${message(code: 'invoiceItem.invoice.invoiceId.label', default: 'Invoice Id')}" />
+                            
                             <th><g:message code="invoiceItem.shipmentItem.label" default="Shipment Item" /></th>
                         
                             <g:sortableColumn property="description" title="${message(code: 'invoiceItem.description.label', default: 'Description')}" />
@@ -68,6 +70,8 @@
                         
                             <td><g:link action="show" id="${invoiceItemInstance.id}">${fieldValue(bean: invoiceItemInstance, field: "id")}</g:link></td>
                         
+                            <td>${fieldValue(bean: invoiceItemInstance, field: "invoice.id")}</td>
+                            
                             <td>${fieldValue(bean: invoiceItemInstance, field: "shipmentItem.orderItem.product.name")}</td>
                         
                             <td>${fieldValue(bean: invoiceItemInstance, field: "description")}</td>
@@ -75,8 +79,11 @@
                             <td>${fieldValue(bean: invoiceItemInstance, field: "invoiceItemType.description")}</td>
                         
                             <td>${fieldValue(bean: invoiceItemInstance, field: "quantity")}</td>
+                            
                             <td>${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()}</td>
+                            
                         	<td>${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()*invoiceItemInstance.quantity}</td>
+                        	
                         	<td>${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
                             
                         

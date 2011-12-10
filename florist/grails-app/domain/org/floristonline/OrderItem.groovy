@@ -3,6 +3,7 @@ package org.floristonline
 class OrderItem {
 
 	//static hasMany = [shipmentItem : ShipmentItem];
+	ProductOrder productOrder;
 	Product product;
 	ContactMechanism contactMechanism;
 	float quantity;

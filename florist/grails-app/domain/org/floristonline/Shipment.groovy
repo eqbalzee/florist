@@ -2,7 +2,8 @@ package org.floristonline
 
 class Shipment {
 
-	static hasMany = [shipmentItem : ShipmentItem, shipmentStatus : ShipmentStatus, shipmentType : ShipmentType];
+	
+	ShipmentType shipmentType;
 	Party shippedToParty;
 	Party shippedFromParty;
 	Date estimatedShipDate;
