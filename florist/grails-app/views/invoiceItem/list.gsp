@@ -60,7 +60,9 @@
                         	
                         	<g:sortableColumn property="amount" title="${message(code: 'invoiceItem.quantity.label', default: 'Amount($)')}" />
                         	
-                        	<g:sortableColumn property="taxableFlag" title="${message(code: 'invoiceItem.taxableFlag.label', default: 'TaxableFlag(Y/N)')}" />    
+                        	<g:sortableColumn property="taxableFlag" title="${message(code: 'invoiceItem.taxableFlag.label', default: 'TaxableFlag(Y/N)')}" /> 
+                        	
+                        	<g:sortableColumn property="paymentId" title="${message(code: 'invoiceItem.paymentId.label', default: 'Payment Id')}" />   
                         
                         </tr>
                     </thead>
@@ -86,7 +88,8 @@
                         	
                         	<td>${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
                             
-                        
+                        	<td>${fieldValue(bean: invoiceItemInstance, field: "payments.id")}</td>
+                        	
                         </tr>
                     </g:each>
                     </tbody>

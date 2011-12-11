@@ -2,9 +2,9 @@ package org.floristonline
 
 class Payment {
 
-	static hasMany = [invoice : Invoice];
+	//static hasMany = [invoice : Invoice];
 	PaymentMethodType paymentMethodType;
-	Party payorParty;
+	Party payerParty;
 	Party receiverParty;
 	Date effectiveDate;
 	int paymentRefNum;

@@ -28,18 +28,7 @@
                             <td valign="top" class="value">${fieldValue(bean: paymentInstance, field: "id")}</td>
                             
                         </tr>
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="payment.invoice.label" default="Invoice" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${paymentInstance.invoice}" var="i">
-                                    <li><g:link controller="invoice" action="show" id="${i.id}">${i?.id}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
+                        
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="payment.amount.label" default="Amount" /></td>
@@ -74,9 +63,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="payment.payorParty.label" default="Payor Party" /></td>
+                            <td valign="top" class="name"><g:message code="payment.payerParty.label" default="Payer Party" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="party" action="show" id="${paymentInstance?.payorParty?.id}">${paymentInstance?.payorParty?.firstName} ${paymentInstance?.payorParty?.lastName}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="party" action="show" id="${paymentInstance?.payerParty?.id}">${paymentInstance?.payerParty?.firstName} ${paymentInstance?.payerParty?.lastName}</g:link></td>
                             
                         </tr>
                     

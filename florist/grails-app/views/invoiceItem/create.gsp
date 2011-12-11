@@ -116,6 +116,16 @@
                             </tr>
                         
                             
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="payments"><g:message code="invoiceItem.payments.label" default="Payment Id" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: invoiceItemInstance, field: 'payments', 'errors')}">
+                                    <g:select name="payments" from="${org.floristonline.Payment.list()}" multiple="yes" optionKey="id" size="5" 
+                                    optionValue="${{it.id}}"
+                                    value="${invoiceItemtInstance?.payments*.id}" />
+                                </td>
+                            </tr>
                         
                         </tbody>
                     </table>

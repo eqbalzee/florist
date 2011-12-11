@@ -30,17 +30,7 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="invoice"><g:message code="payment.invoice.label" default="Invoice" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: paymentInstance, field: 'invoice', 'errors')}">
-                                    <g:select name="invoice" from="${org.floristonline.Invoice.list()}" 
-                                    multiple="yes" optionKey="id" size="5" 
-                                    optionValue="${{it.id}}"
-                                    value="${paymentInstance?.invoice*.id}" />
-                                </td>
-                            </tr>
+                        
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -86,12 +76,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="payorParty"><g:message code="payment.payorParty.label" default="Payor Party" /></label>
+                                    <label for="payerParty"><g:message code="payment.payerParty.label" default="Payer Party" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: paymentInstance, field: 'payorParty', 'errors')}">
-                                    <g:select name="payorParty.id" from="${org.floristonline.Party.list()}" optionKey="id" 
+                                <td valign="top" class="value ${hasErrors(bean: paymentInstance, field: 'payerParty', 'errors')}">
+                                    <g:select name="payerParty.id" from="${org.floristonline.Party.list()}" optionKey="id" 
                                     optionValue="${{it.firstName + ' ' + it.lastName}}"
-                                    value="${paymentInstance?.payorParty?.id}"  />
+                                    value="${paymentInstance?.payerParty?.id}"  />
                                 </td>
                             </tr>
                         
