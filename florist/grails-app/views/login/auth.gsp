@@ -26,11 +26,11 @@
 		<tr>
 			<td colspan='2'>
 				<input type="checkbox" class="checkbox" name="${rememberMeParameter}" id="remember_me" checked="checked" />
-				<label for='remember_me'><g:message code='spring.security.ui.login.rememberme'/></label> |
-				<span class="forgot-link">
+				<label for='remember_me'><g:message code='spring.security.ui.login.rememberme'/></label>
+				<%--<span class="forgot-link">
 					<g:link controller='register' action='forgotPassword'><g:message code='spring.security.ui.login.forgotPassword'/></g:link>
 				</span>
-			</td>
+			--%></td>
 		</tr>
 		<tr>
 			<td colspan='2'>
