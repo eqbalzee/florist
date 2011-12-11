@@ -14,7 +14,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
         </div>
-    <div class="nav" align="center">
+    <div class="navTop" align="center">
             
             <span class="menuButton"><g:link controller="party">Party</g:link></span>
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
@@ -25,8 +25,9 @@
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
             <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
-            <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
             <span class="menuButton"><g:link controller="shipmentStatusType">Shipment Status Type</g:link></span>
+            <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
+            
             
         </div>
         <div>

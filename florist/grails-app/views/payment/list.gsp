@@ -8,8 +8,34 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
+    	<div class="nav">
+            
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+        	
+        </div>
+    	<div class="navTop" align="center">
+            
+                        
+            <span class="menuButton"><g:link controller="party">Party</g:link></span>
+            <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
+            <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
+            <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
+            <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
+            <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
+            <span class="menuButton"><g:link controller="orderItem">Order Item</g:link></span>
+            <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
+            <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
+            <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
+            <span class="menuButton"><g:link controller="paymentMethodType">Payment Method Type</g:link></span>
+            
+            
+        </div>
+        <div>
+        &nbsp;
+        </div>
+        <div class="nav">
+            
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
@@ -46,9 +72,9 @@
                         
                             <td>${fieldValue(bean: paymentInstance, field: "comment")}</td>
                         
-                            <td><g:formatDate date="${paymentInstance.effectiveDate}" /></td>
+                            <td><g:formatDate format="MM-dd-yyyy" date="${paymentInstance.effectiveDate}" /></td>
                         
-                            <td>${fieldValue(bean: paymentInstance, field: "paymentMethodType")}</td>
+                            <td>${fieldValue(bean: paymentInstance, field: "paymentMethodType.description")}</td>
                         
                             <td>${fieldValue(bean: paymentInstance, field: "paymentRefNum")}</td>
                         

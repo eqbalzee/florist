@@ -52,7 +52,7 @@
                             
                             <th><g:message code="invoiceItemDataReport.invoice.label" default="Product" /></th>
                             
-                            <th><g:message code="invoiceItemDataReport.invoice.label" default="Product Feature" /></th>
+                            
                             
                             <th><g:message code="invoiceItemDataReport.invoice.label" default="Quantity" /></th>
                             
@@ -64,30 +64,31 @@
                     </thead>
                     <tbody>
                     <g:each in="${invoiceItemDataReportInstanceList}" status="i" var="invoiceItemDataReportInstance">
+                    <g:each in="${invoiceItemDataReportInstance.invoiceItem}" status="j" var="invoiceItemInstance">
                     
-                    <g:each in="${invoiceItemDataReportInstance.invoice.invoiceItem}" status="j" var="invoiceItemInstance">
+                    
                     
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
                             <td><g:link action="show" id="${invoiceItemDataReportInstance.id}">${fieldValue(bean: invoiceItemDataReportInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: invoiceItemDataReportInstance, field: "invoice.id")}</td>
+                            <td>${fieldValue(bean: invoiceItemInstance, field: "invoice.id")}</td>
                             
                             <td>${fieldValue(bean: invoiceItemInstance, field: "id")}</td>
                             
                             <td>${fieldValue(bean: invoiceItemInstance, field: "shipmentItem.orderItem.product.name")}</td>
                             
-                            <td>${fieldValue(bean: invoiceItemInstance, field: "shipmentItem.orderItem.product.productFeature.description")}</td>
-                            
+                                                       
                             <td>${fieldValue(bean: invoiceItemInstance, field: "quantity")}</td>
                             
-                            <td>${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()}</td>
+                            
+                            <td><g:formatNumber number="${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                                                         
                             <td>${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
                         
                         </tr>
                         </g:each>
-                    </g:each>
+                    	</g:each>
                     </tbody>
                 </table>
             </div>

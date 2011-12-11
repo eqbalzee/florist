@@ -73,6 +73,7 @@
                     <li class="controller"><g:link controller="priceComponentType">Price Component Type</g:link></li>
                     <li class="controller"><g:link controller="productOrder">Order</g:link></li>
                     <li class="controller"><g:link controller="orderItem">Order Item</g:link></li>
+                    <li class="controller"><g:link controller="orderType">Order Type</g:link></li>
                     <li class="controller"><g:link controller="shipment">Shipment</g:link></li>
                     <li class="controller"><g:link controller="shipmentType">ShipmentType</g:link></li>
                     <li class="controller"><g:link controller="shipmentItem">Shipment Item</g:link></li>
@@ -89,15 +90,17 @@
                     <li class="controller"><g:link controller="invoiceStatusType">Invoice Status Type</g:link></li>
                     <li class="controller"><g:link controller="invoiceStatus">Invoice Status</g:link></li>
                     <li class="controller"><g:link controller="inventoryItem">Inventory Item</g:link></li>
-                    <li class="controller"><g:link controller="reportShipmentStatusData">Report Shipment Status Data</g:link></li>
+                    
+                    <li class="controller"><g:link controller="paymentMethodType">Payment Method Type</g:link></li>
+                    <li class="controller"><g:link controller="payment">Payment</g:link></li>
+                    
+                    
                     <li class="controller"><g:link controller="shipmentDataAndContactMechanismsReport">Shipment Data And Contact Mechanisms Report</g:link></li>
                     <li class="controller"><g:link controller="invoiceDataReport">Invoice Data Report</g:link></li>
                     <li class="controller"><g:link controller="invoiceItemDataReport">Invoice Item Data Report</g:link></li>
                     <li class="controller"><g:link controller="invoiceStatusDataReport">Invoice Status Data Report</g:link></li>
-                    <li class="controller"><g:link controller="paymentMethodType">Payment Method Type</g:link></li>
-                    <li class="controller"><g:link controller="payment">Payment</g:link></li>
                     <li class="controller"><g:link controller="invoicePaymentsReport">Invoice Payments Report</g:link></li>
-                    <li class="controller"><g:link controller="orderType">Order Type</g:link></li>
+                    
                     <li class="controller"><g:link controller="salesAndPurchaseOrderReport">Sales And Purchase Orders Report</g:link></li>
                     <li class="controller"><g:link controller="invoiceItemPaymentsReport">InvoiceItem Payments Report</g:link></li>
                     

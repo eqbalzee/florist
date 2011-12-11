@@ -47,9 +47,9 @@
                         
                             <th><g:message code="reportShipmentStatusData.shipment.label" default="Shipment" /></th>
                             
-                            <th><g:message code="reportShipmentStatusData.shipment.label" default="Shipment Item" /></th>
+                            <th><g:message code="reportShipmentStatusData.shipment.label" default="Shipment Item Id" /></th>
                             
-                            
+                            <g:sortableColumn property="shipmentStatus" title="${message(code: 'reportShipmentStatusData.shipment.label', default: 'Shipment Status')}" />
                         
                         </tr>
                     </thead>
@@ -63,6 +63,9 @@
                             <td><g:link action="show" id="${reportShipmentStatusDataInstance.id}">${fieldValue(bean: reportShipmentStatusDataInstance, field: "id")}</g:link></td>
                         
                             <td>${fieldValue(bean: shipmentItemInstance, field: "shipment.id")}</td>
+                            
+                            <td>${fieldValue(bean: shipmentItemInstance, field: "id")}</td>
+                            
                             <td>${fieldValue(bean: shipmentItemInstance, field: "orderItem.product.name")}</td>
                             
                         		

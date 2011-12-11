@@ -13,17 +13,21 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
         </div>
-    <div class="nav" align="center">
+    <div class="navTop" align="center">
             
+                        
             <span class="menuButton"><g:link controller="party">Party</g:link></span>
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
-            <span class="menuButton"><g:link controller="product">Product</g:link></span>
+            <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Product Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
+            <span class="menuButton"><g:link controller="orderItem">Order Item</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
+            <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
+            <span class="menuButton"><g:link controller="payment">Payment</g:link></span>
             
             
         </div>
@@ -56,9 +60,9 @@
                         
                             <g:sortableColumn property="quantity" title="${message(code: 'invoiceItem.quantity.label', default: 'Quantity')}" />
                         
-                        	<g:sortableColumn property="unitPrice" title="${message(code: 'invoiceItem.unitPrice.label', default: 'Unit Price($)')}" />
+                        	<g:sortableColumn property="unitPrice" title="${message(code: 'invoiceItem.unitPrice.label', default: 'Unit Price')}" />
                         	
-                        	<g:sortableColumn property="amount" title="${message(code: 'invoiceItem.quantity.label', default: 'Amount($)')}" />
+                        	<g:sortableColumn property="amount" title="${message(code: 'invoiceItem.quantity.label', default: 'Amount')}" />
                         	
                         	<g:sortableColumn property="taxableFlag" title="${message(code: 'invoiceItem.taxableFlag.label', default: 'TaxableFlag(Y/N)')}" /> 
                         	
@@ -82,13 +86,18 @@
                         
                             <td>${fieldValue(bean: invoiceItemInstance, field: "quantity")}</td>
                             
-                            <td>${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()}</td>
                             
-                        	<td>${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()*invoiceItemInstance.quantity}</td>
+                            <td><g:formatNumber number="${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
+                            
+                        	
+                        	
+                        	<td><g:formatNumber number="${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()*invoiceItemInstance.quantity}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                         	
                         	<td>${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
                             
                         	<td>${fieldValue(bean: invoiceItemInstance, field: "payments.id")}</td>
+                        	
+                        	
                         	
                         </tr>
                     </g:each>

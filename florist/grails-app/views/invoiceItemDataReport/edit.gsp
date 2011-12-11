@@ -33,10 +33,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="invoice"><g:message code="invoiceItemDataReport.invoice.label" default="Invoice" /></label>
+                                  <label for="invoiceItem"><g:message code="invoiceItemDataReport.invoiceItem.label" default="Invoice Item" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: invoiceItemDataReportInstance, field: 'invoice', 'errors')}">
-                                    <g:select name="invoice.id" from="${org.floristonline.Invoice.list()}" optionKey="id" value="${invoiceItemDataReportInstance?.invoice?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: invoiceItemDataReportInstance, field: 'invoiceItem', 'errors')}">
+                                    <g:select name="invoiceItem" from="${org.floristonline.InvoiceItem.list()}" multiple="yes" optionKey="id" size="5" 
+                                    optionValue="${{it.id}}"
+                                    value="${invoiceItemDataReportInstance?.invoiceItem*.id}" />
                                 </td>
                             </tr>
                         

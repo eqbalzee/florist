@@ -13,7 +13,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
         </div>
-    <div class="nav" align="center">
+    <div class="navTop" align="center">
             
             <span class="menuButton"><g:link controller="partyRole">Party Role</g:link></span>
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>

@@ -93,4 +93,5 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.floristonline.login.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.floristonline.login.UserRole'
 grails.plugins.springsecurity.authority.className = 'org.floristonline.login.Role'
-grails.plugins.springsecurity.ui.register.defaultRoleNames = ['ROLE_APP']
+//grails.plugins.springsecurity.ui.register.defaultRoleNames = ['ROLE_APP']
+grails.plugins.springsecurity.ui.register.postRegisterUrl = '/'

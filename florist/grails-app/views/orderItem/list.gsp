@@ -13,17 +13,19 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
         </div>
-    <div class="nav" align="center">
+    <div class="navTop" align="center">
             
             <span class="menuButton"><g:link controller="party">Party</g:link></span>
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
-            <span class="menuButton"><g:link controller="product">Product</g:link></span>
+            <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
-            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="estimatedProductCost">Estimated  Cost</g:link></span>
             <span class="menuButton"><g:link controller="priceComponent">Price Component</g:link></span>
+            <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
+            <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
+            <span class="menuButton"><g:link controller="invoiceItem">Invoice Item</g:link></span>
             
             
         </div>
@@ -54,7 +56,7 @@
                             
                             <g:sortableColumn property="itemDescription" title="${message(code: 'orderItem.itemDescription.label', default: 'Item Description')}" />
                             
-                            <g:sortableColumn property="unitPrice" title="${message(code: 'orderItem.unitPrice.label', default: 'Unit Price $')}" />
+                            <g:sortableColumn property="unitPrice" title="${message(code: 'orderItem.unitPrice.label', default: 'Unit Price')}" />
                             
                             <g:sortableColumn property="quantity" title="${message(code: 'orderItem.quantity.label', default: 'Quantity')}" />
                         
@@ -82,7 +84,8 @@
                             
                         	<td>${fieldValue(bean: orderItemInstance, field: "itemDescription")}</td>
                         	
-                        	<td>${orderItemInstance.product.priceComponent()}</td>
+                        	
+                        	<td><g:formatNumber number="${orderItemInstance.product.priceComponent()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                         	
                         	<td>${fieldValue(bean: orderItemInstance, field: "quantity")}</td>
                         	

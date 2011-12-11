@@ -30,9 +30,15 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="invoiceItemDataReport.invoice.label" default="Invoice" /></td>
+                            <td valign="top" class="name"><g:message code="invoiceItemDataReport.invoiceItem.label" default="Invoice Item" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="invoice" action="show" id="${invoiceItemDataReportInstance?.invoice?.id}">${invoiceItemDataReportInstance?.invoice?.id}</g:link></td>
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${invoiceItemDataReportInstance.invoiceItem}" var="i">
+                                    <li><g:link controller="invoiceItem" action="show" id="${i.id}">${i?.id}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     

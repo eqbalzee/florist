@@ -13,7 +13,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         	
         </div>
-    <div class="nav" align="center">
+    <div class="navTop" align="center">
             
             <span class="menuButton"><g:link controller="partyRole">Party Role</g:link></span>
             <span class="menuButton"><g:link controller="contactMechanism">Contact Mechanism</g:link></span>
@@ -51,21 +51,14 @@
                             <g:sortableColumn property="lastName" title="${message(code: 'party.lastName.label', default: 'Last Name')}" />
                             
                             <g:sortableColumn property="middleName" title="${message(code: 'party.middleName.label', default: 'Middle Name')}" />
-                            
-                            <g:sortableColumn property="currentPersonalTitle" title="${message(code: 'party.currentPersonalTitle.label', default: 'Current Personal Title')}" />
-                              
-                                             
+                                                                                                
                             <g:sortableColumn property="gender" title="${message(code: 'party.gender.label', default: 'Gender')}" />
                         
                             <g:sortableColumn property="birthDate" title="${message(code: 'party.birthDate.label', default: 'Birth Date')}" />
-                        	
-                        	<g:sortableColumn property="maritalStatus" title="${message(code: 'party.maritalStatus.label', default: 'Marital Status')}" />
-                        	
+                        	                        	                        	
                         	<g:sortableColumn property="socialSecurityNo" title="${message(code: 'party.socialSecurityNo.label', default: 'Social Security No')}" />
-                        	
-                        	<g:sortableColumn property="totalWorkExperience" title="${message(code: 'party.totalWorkExperience.label', default: 'Total Work Experience')}" />
                         	                        	                       	
-                            
+                            <g:sortableColumn property="contactAddress" title="${message(code: 'party.contactAddress.label', default: 'Contact Address')}" />
                             
                             <g:sortableColumn property="comment" title="${message(code: 'party.comment.label', default: 'Comment')}" />
                         
@@ -84,18 +77,15 @@
                             <td>${fieldValue(bean: partyInstance, field: "lastName")}</td>
                             
                             <td>${fieldValue(bean: partyInstance, field: "middleName")}</td>
-                            
-                            <td>${fieldValue(bean: partyInstance, field: "currentPersonalTitle")}</td>
-                                                                                    
+                                                     
+                                                                                  
                             <td>${fieldValue(bean: partyInstance, field: "gender")}</td>
                             
                             <td><g:formatDate format="yyyy-MM-dd" date="${partyInstance.birthDate}" /></td>
-                            
-                            <td>${fieldValue(bean: partyInstance, field: "maritalStatus")}</td>
-                            
+                                                        
                             <td>${fieldValue(bean: partyInstance, field: "socialSecurityNo")}</td>
                             
-                            <td>${fieldValue(bean: partyInstance, field: "totalWorkExperience")}</td>
+                            <td>${fieldValue(bean: partyInstance, field: "contactMechanism")}</td>                            
                                                                       
                             <td>${fieldValue(bean: partyInstance, field: "comment")}</td>
                         
