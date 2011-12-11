@@ -84,9 +84,9 @@
                             
                             <td>${fieldValue(bean: productInstance, field: "productCategories.description")}</td>
                                                                                     
-                            <td>${productInstance.estimatedProductCost()}</td>
+                            <td><g:formatNumber number="${productInstance.estimatedProductCost()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                             
-                            <td>${productInstance.priceComponent()}</td>
+                            <td><g:formatNumber number="${productInstance.priceComponent()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                             
                             <td>${fieldValue(bean: productInstance, field: "comment")}</td>
                         

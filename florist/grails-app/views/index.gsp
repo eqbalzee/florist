@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Welcome to Grails</title>
+        <title>Welcome to Florist ERP System</title>
         <meta name="layout" content="main" />
         <style type="text/css" media="screen">
 
@@ -99,6 +99,7 @@
                     <li class="controller"><g:link controller="invoicePaymentsReport">Invoice Payments Report</g:link></li>
                     <li class="controller"><g:link controller="orderType">Order Type</g:link></li>
                     <li class="controller"><g:link controller="salesAndPurchaseOrderReport">Sales And Purchase Orders Report</g:link></li>
+                    <li class="controller"><g:link controller="invoiceItemPaymentsReport">InvoiceItem Payments Report</g:link></li>
                     
                     
                         <%--<li class="controller"><g:link controller="Product">Create Product</g:link></li>

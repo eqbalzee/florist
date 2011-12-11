@@ -64,7 +64,14 @@ class ProductController {
                     return
                 }
             }
-            productInstance.properties = params
+			
+			if (params.image.getSize() > 0) {
+            	productInstance.properties = params
+			} else {
+				def image = productInstance.image
+				productInstance.properties = params
+				productInstance.image = image
+			} 
             if (!productInstance.hasErrors() && productInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'product.label', default: 'Product'), productInstance.id])}"
                 redirect(action: "show", id: productInstance.id)

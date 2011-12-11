@@ -66,7 +66,8 @@
                                     <label for="image"><g:message code="product.image.label" default="Image" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: productInstance, field: 'image', 'errors')}">
-                                    <input type="file" id="image" name="image" />
+                                    <input type="file" id="image" name="image" /><br/>
+                                    <img width="110" height="110" src="${createLink(controller:'product', action:'image', id: productInstance.id)}"/>
                                 </td>
                             </tr>
                         

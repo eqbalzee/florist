@@ -8,7 +8,7 @@ class InvoiceItem {
 	Invoice invoice;
 	InvoiceItemType InvoiceItemType;
 	static hasMany = [payments : Payment];
-	Payment payment;
+	//Payment payment;
 	char taxableFlag;
 	int quantity;
 	float unitPrice;

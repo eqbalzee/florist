@@ -16,13 +16,16 @@
     <div class="nav" align="center">
             
             <span class="menuButton"><g:link controller="party">Party</g:link></span>
-            <span class="menuButton"><g:link controller="partRole">Party Role</g:link></span>
+            <span class="menuButton"><g:link controller="partyRole">Party Role</g:link></span>
             <span class="menuButton"><g:link controller="product">Product</g:link></span>
             <span class="menuButton"><g:link controller="productCategory">Product Category</g:link></span>
             <span class="menuButton"><g:link controller="productFeature">Product Feature</g:link></span>
             <span class="menuButton"><g:link controller="productOrder">Order</g:link></span>
+            <span class="menuButton"><g:link controller="orderItem">Order Item</g:link></span>
             <span class="menuButton"><g:link controller="shipment">Shipment</g:link></span>
+            <span class="menuButton"><g:link controller="shipmentItem">Shipment Item</g:link></span>
             <span class="menuButton"><g:link controller="invoice">Invoice</g:link></span>
+            <span class="menuButton"><g:link controller="invoiceItem">Invoice Item</g:link></span>
             
             
         </div>
