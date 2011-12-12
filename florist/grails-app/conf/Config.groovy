@@ -95,3 +95,15 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.floriston
 grails.plugins.springsecurity.authority.className = 'org.floristonline.login.Role'
 //grails.plugins.springsecurity.ui.register.defaultRoleNames = ['ROLE_APP']
 grails.plugins.springsecurity.ui.register.postRegisterUrl = '/'
+
+grails.plugins.springsecurity.interceptUrlMap = [
+//	'/': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/register/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/fonts/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+//	'/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/user/**':['ROLE_ADMIN'],
+	'/**':['ROLE_ADMIN', 'ROLE_APP']
+]
