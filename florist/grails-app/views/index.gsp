@@ -53,10 +53,21 @@
     <body>
         
         <div id="pageBody">
-            <h1>Florist ERP System</h1>
+            <h1>
+            Welcome to the Florist Online ERP System.
+				<sec:ifLoggedIn>
+				You are logged in as <sec:username/> (<g:link controller='logout'>Logout</g:link>)
+				</sec:ifLoggedIn>
+				<sec:ifNotLoggedIn>
+					Please <g:link controller="login" action="auth">Login</g:link> to access the application
+				</sec:ifNotLoggedIn>
+			
+			</h1>
             
 
             <div id="controllerList" class="dialog">
+            
+            
                 <h1>Available Functionalities:</h1>
                 <ul>
                     
@@ -112,5 +123,6 @@
                 </ul>
             </div>
         </div>
+        
     </body>
 </html>

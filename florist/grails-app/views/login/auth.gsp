@@ -11,9 +11,10 @@
 	<div class="login-inner">
 	<form action='${postUrl}' method='POST' id="loginForm" name="loginForm" autocomplete='off'>
 	<div class="sign-in">
-
-	<h1><g:message code='spring.security.ui.login.signin'/></h1>
-
+	
+		<img src="${resource(dir:'images',file:'projectPhoto1.jpg')}" alt="Flower" border="0"/>
+		<h1>Welcome to Florist Online ERP System. Please Login.</h1>
+	
 	<table>
 		<tr>
 			<td><label for="username"><g:message code='spring.security.ui.login.username'/></label></td>

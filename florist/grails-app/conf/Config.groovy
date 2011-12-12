@@ -1,3 +1,5 @@
+import grails.plugins.springsecurity.SecurityConfigType
+
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
 
@@ -96,14 +98,20 @@ grails.plugins.springsecurity.authority.className = 'org.floristonline.login.Rol
 //grails.plugins.springsecurity.ui.register.defaultRoleNames = ['ROLE_APP']
 grails.plugins.springsecurity.ui.register.postRegisterUrl = '/'
 
+grails.plugins.springsecurity.securityConfigType=SecurityConfigType.InterceptUrlMap
 grails.plugins.springsecurity.interceptUrlMap = [
 //	'/': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/register/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/fonts/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//	'/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/register/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/fonts/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/plugins/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/user/**':['ROLE_ADMIN'],
+	'/securityInfo/**':['ROLE_ADMIN'],
+	'/registrationCode/**':['ROLE_ADMIN'],
+	'/role/**':['ROLE_ADMIN'],
 	'/**':['ROLE_ADMIN', 'ROLE_APP']
 ]
