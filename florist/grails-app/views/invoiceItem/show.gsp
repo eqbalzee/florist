@@ -93,9 +93,9 @@
                         
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="invoiceItem.taxableFlag.label" default="Taxable Flag" /></td>
+                            <td valign="top" class="name"><g:message code="invoiceItem.taxableFlagBoolean.label" default="Taxable?" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
+                            <td valign="top" class="value"><g:formatBoolean boolean="${invoiceItemInstance?.taxableFlagBoolean}" true="Yes" false="No"/></td>
                             
                         </tr>
                     

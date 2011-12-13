@@ -64,7 +64,7 @@
                         	
                         	<g:sortableColumn property="amount" title="${message(code: 'invoiceItem.quantity.label', default: 'Amount')}" />
                         	
-                        	<g:sortableColumn property="taxableFlag" title="${message(code: 'invoiceItem.taxableFlag.label', default: 'TaxableFlag(Y/N)')}" /> 
+                        	<g:sortableColumn property="taxableFlag" title="${message(code: 'invoiceItem.taxableFlag.label', default: 'Taxable')}" /> 
                         	
                         	<g:sortableColumn property="paymentId" title="${message(code: 'invoiceItem.paymentId.label', default: 'Payment Id')}" />   
                         
@@ -93,7 +93,7 @@
                         	
                         	<td><g:formatNumber number="${invoiceItemInstance.shipmentItem.orderItem.product.priceComponent()*invoiceItemInstance.quantity}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                         	
-                        	<td>${fieldValue(bean: invoiceItemInstance, field: "taxableFlag")}</td>
+                        	<td><g:formatBoolean boolean="${invoiceItemInstance?.taxableFlagBoolean}" true="Yes" false="No"/></td>
                             
                         	<td>${fieldValue(bean: invoiceItemInstance, field: "payments.id")}</td>
                         	

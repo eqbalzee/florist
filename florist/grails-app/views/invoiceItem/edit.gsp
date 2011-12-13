@@ -117,8 +117,8 @@
                                 <td valign="top" class="name">
                                     <label for="taxableFlag"><g:message code="invoiceItem.taxableFlag.label" default="Taxable Flag(Y/N)" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: invoiceItemInstance, field: 'taxableFlag', 'errors')}">
-                                    <g:textField name="taxableFlag" value="${fieldValue(bean: invoiceItemInstance, field: 'taxableFlag')}" />
+                                <td valign="top" class="value ${hasErrors(bean: invoiceItemInstance, field: 'taxableFlagBoolean', 'errors')}">
+                                    <g:checkBox name="taxableFlagBoolean" value="${invoiceItemInstance?.taxableFlagBoolean}" />
                                 </td>
                             </tr>
                         
