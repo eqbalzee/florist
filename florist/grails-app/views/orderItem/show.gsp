@@ -97,7 +97,7 @@
                         </tr>
                         
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="orderItem.contactMechanism.label" default="Contact Mechanism" /></td>
+                            <td valign="top" class="name"><g:message code="orderItem.contactMechanism.label" default="Shipping Address" /></td>
                             
                             <td valign="top" class="value"><g:link controller="contactMechanism" action="show" id="${orderItemInstance?.contactMechanism?.id}">${orderItemInstance?.contactMechanism?.address}, ${orderItemInstance?.contactMechanism?.city}, ${orderItemInstance?.contactMechanism?.state}, ${orderItemInstance?.contactMechanism?.zipCode}</g:link></td>
                             

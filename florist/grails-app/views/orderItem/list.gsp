@@ -62,7 +62,7 @@
                         
                             <g:sortableColumn property="estimatedDeliveryDate" title="${message(code: 'orderItem.estimatedDeliveryDate.label', default: 'Estimated Delivery Date')}" />
                             
-                            <th><g:message code="orderItem.contactMechanism.label" default="Contact Mechanism" /></th>
+                            <th><g:message code="orderItem.contactMechanism.label" default="Shipping Address" /></th>
                             
                             <g:sortableColumn property="shippingInstructions" title="${message(code: 'orderItem.shippingInstructions.label', default: 'Shipping Instructions')}" />
                                               

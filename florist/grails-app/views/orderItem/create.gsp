@@ -109,7 +109,7 @@
                         	
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="contactMechanism"><g:message code="orderItem.contactMechanism.label" default="Contact Address" /></label>
+                                  <label for="contactMechanism"><g:message code="orderItem.contactMechanism.label" default="Shipping Address" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: orderItemInstance, field: 'contactMechanism', 'errors')}">
                                     <g:select name="contactMechanism.id" 
