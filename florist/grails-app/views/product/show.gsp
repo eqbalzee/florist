@@ -101,14 +101,14 @@
                     	<tr class="prop">
                             <td valign="top" class="name"><g:message code="product.estimatedProductCost.label" default="Estimated Product Cost" /></td>
                             
-                            <td valign="top" class="value">${productInstance.estimatedProductCost()}</td>
+                            <td valign="top" class="value"><g:formatNumber number="${productInstance.estimatedProductCost()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                             
                         </tr>
                         
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="product.priceComponent.label" default="Unit Price" /></td>
                             
-                            <td valign="top" class="value">${productInstance.priceComponent()}</td>
+                            <td valign="top" class="value"><g:formatNumber number="${productInstance.priceComponent()}" format="###,##"  type="currency" currencyCode="USD"  /></td>
                             
                         </tr>
                     
